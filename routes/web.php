@@ -31,3 +31,7 @@ Route::post('/flights/airplanes/asign/delete/{airplane_id}', [App\Http\Controlle
 Route::get('/middleware/explain', function() {
     return view('middleware_explain');
 })->name('middleware_explain');
+
+Route::get('/flights/users/show', [App\Http\Controllers\FlightsUsersRelationshipController::class, 'show'])->name('flight_user_show');
+
+Route::post('/flights/user/asign/{flight_id}', [App\Http\Controllers\FlightsUsersRelationshipController::class, 'asign'])->name('flight_user_asign');
