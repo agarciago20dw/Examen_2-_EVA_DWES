@@ -20,5 +20,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Route::post('/user/register', [App\Http\Controllers\Auth\RegisterController::class, 'create'])->name('register');
+Route::get('/admin', [App\Http\Controllers\FlightsController::class, 'show'])->name('flights_show');
 

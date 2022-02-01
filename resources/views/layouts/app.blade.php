@@ -63,10 +63,10 @@
 
           <div class="links">
               <!-- SI EL USUARIO TIENE EL ROL 2 (ADMIN) VERÁ ESTA PESTAÑA (POR DEFECTO UN USUARIO TIENE EL ROL 1) -->
-              @if (Auth::user()->rol == 2) {
-                <a href="#">@lang('messages.administration')</a>
-              }
-              <a href="#">@lang('messages.flight_plane')</a>
+              @if (Auth::user() != null && Auth::user()->rol == 2)
+                <a href="{{ route('flights_show') }}">@lang('messages.administration')</a>
+              @endif
+              <a href="{{ route('flight_airplane_asign') }}">@lang('messages.flight_plane')</a>
               <a href="/">@lang('messages.future_flights')</a>
               <a href="/">@lang('messages.middleware')</a>
           </div>
