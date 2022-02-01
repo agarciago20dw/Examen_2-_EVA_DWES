@@ -62,7 +62,10 @@
           </div>
 
           <div class="links">
-              <a href="#">@lang('messages.administration')</a>
+              <!-- SI EL USUARIO TIENE EL ROL 2 (ADMIN) VERÁ ESTA PESTAÑA (POR DEFECTO UN USUARIO TIENE EL ROL 1) -->
+              @if (Auth::user()->rol == 2) {
+                <a href="#">@lang('messages.administration')</a>
+              }
               <a href="#">@lang('messages.flight_plane')</a>
               <a href="/">@lang('messages.future_flights')</a>
               <a href="/">@lang('messages.middleware')</a>
