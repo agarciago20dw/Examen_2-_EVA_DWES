@@ -22,3 +22,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/admin', [App\Http\Controllers\FlightsController::class, 'show'])->name('flights_show');
 
+Route::get('/flights/airplanes/show', [App\Http\Controllers\FlightsAirplanesRelationshipController::class, 'show'])->name('flight_airplane_show');
+
+Route::post('/flights/airplanes/asign', [App\Http\Controllers\FlightsAirplanesRelationshipController::class, 'asign'])->name('flight_airplane_asign');

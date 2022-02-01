@@ -12,4 +12,9 @@ class Flight extends Model
     public function users(){
         return $this->belongsToMany('App\Models\User');
     }
+
+    public function airplanes() {
+        return $this->hasMany('App\Models\airplane');
+    }
+
 }

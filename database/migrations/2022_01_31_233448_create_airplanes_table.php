@@ -18,6 +18,8 @@ class CreateAirplanesTable extends Migration
             $table->string("name");
             $table->string("maker");
             $table->integer("seats");
+            $table->unsignedBigInteger('flight_id')->nullable();
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
             $table->timestamps();
         });
     }

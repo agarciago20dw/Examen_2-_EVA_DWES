@@ -66,7 +66,7 @@
               @if (Auth::user() != null && Auth::user()->rol == 2)
                 <a href="{{ route('flights_show') }}">@lang('messages.administration')</a>
               @endif
-              <a href="{{ route('flight_airplane_asign') }}">@lang('messages.flight_plane')</a>
+              <a href="{{ route('flight_airplane_show') }}">@lang('messages.flight_plane')</a>
               <a href="/">@lang('messages.future_flights')</a>
               <a href="/">@lang('messages.middleware')</a>
           </div>
