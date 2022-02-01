@@ -25,4 +25,27 @@
         <input type="submit" value="ASIGNAR">
     </form>
 
+    <table>
+        <tr>
+            <td style="padding: 20px; font-size: 1.2rem; font-weight: bold;">
+                Flight Name
+            </td>
+            <td style="padding: 20px; font-size: 1.2rem; font-weight: bold;">
+                Airplane Name
+            </td>
+        </tr>
+    @foreach ($all_flights_airplanes as $airplane)
+        <tr>
+            <td style="padding: 20px;">{{ $airplane->flight->name }}</td>
+            <td style="padding: 20px;">{{ $airplane->name }}</td>
+            <td>
+                <form action="{{ route('flight_airplane_delete_asign', $airplane->id) }}" method="post">
+                    @csrf
+                    <input type="submit" value="BORRAR">
+                </form>
+            </td>
+        </tr>
+    @endforeach
+  </table>
+
 @endsection

@@ -25,3 +25,9 @@ Route::get('/admin', [App\Http\Controllers\FlightsController::class, 'show'])->n
 Route::get('/flights/airplanes/show', [App\Http\Controllers\FlightsAirplanesRelationshipController::class, 'show'])->name('flight_airplane_show');
 
 Route::post('/flights/airplanes/asign', [App\Http\Controllers\FlightsAirplanesRelationshipController::class, 'asign'])->name('flight_airplane_asign');
+
+Route::post('/flights/airplanes/asign/delete/{airplane_id}', [App\Http\Controllers\FlightsAirplanesRelationshipController::class, 'deleteAsign'])->name('flight_airplane_delete_asign');
+
+Route::get('/middleware/explain', function() {
+    return view('middleware_explain');
+})->name('middleware_explain');
